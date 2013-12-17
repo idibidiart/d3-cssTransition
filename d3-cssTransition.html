@@ -14,10 +14,10 @@
                 d3.select(this)
                         .cssTransition(
                         {
-                            // now you can do any kind of hardware-acceleraed transform
-                            // and it doesn't have to syntactically match the previous
-                            // transform string as when using d3.interpolateString in
-                            // styleTween or attrTween
+                            // now you can do any kind of hardware-accelerated transform
+                            // and you don't have to create two transform strings and
+                            // interpolate the numbers within using d3.interpolateString
+                            // in styleTween or attrTween
                             transform: 'scale(2) rotate(45deg)'
                         },
                         {
