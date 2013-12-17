@@ -4,7 +4,6 @@
 <script src="d3-cssTransition.js"></script>
 <body>
 <script>
-
     // demo of d3 cssTransition plugin
 
     var div = d3.select("body")
@@ -15,7 +14,11 @@
                 d3.select(this)
                         .cssTransition(
                         {
-                            transform: 'scale(2)'
+                            // now you can do any kind of hardware-acceleraed transform
+                            // and it doesn't have to syntactically match the previous
+                            // transform string as when using d3.interpolateString in
+                            // styleTween or attrTween
+                            transform: 'scale(2) rotate(45deg)'
                         },
                         {
                             duration: 5000,
