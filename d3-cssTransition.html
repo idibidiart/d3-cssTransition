@@ -10,6 +10,8 @@
             .append("div")
             .style({position: 'absolute', left: '200px', top: '200px', width: '100px', height: '100px', background: 'red'})
             .transition()
+            // using "end" allows d3 to cancel the cssTransition when the .transition is
+            // interrupted
             .each("start" /* or end */, function() {
                 d3.select(this)
                         .cssTransition(
