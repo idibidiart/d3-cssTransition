@@ -4,7 +4,6 @@
 <script src="d3-cssTransition.js"></script>
 <body>
 <script>
-
     // demo of d3 cssTransition plugin
 
     var div = d3.select("body")
@@ -15,7 +14,11 @@
                 d3.select(this)
                         .cssTransition(
                         {
-                            transform: 'scale(2)'
+                            // now you can do any kind of hardware-accelerated transform
+                            // and you don't have to create two transform strings and
+                            // interpolate the numbers within using d3.interpolateString
+                            // in styleTween or attrTween
+                            transform: 'scale(2) rotate(45deg)'
                         },
                         {
                             duration: 5000,
