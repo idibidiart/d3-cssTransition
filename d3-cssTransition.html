@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="d3-cssTransition.js"></script>
+<body>
+<script>
+
+    // demo of d3 cssTransition plugin
+
+    var div = d3.select("body")
+            .append("div")
+            .style({position: 'absolute', left: '200px', top: '200px', width: '100px', height: '100px', background: 'red'})
+            .transition()
+            .each("start" /* or end */, function() {
+                d3.select(this)
+                        .cssTransition(
+                        {
+                            transform: 'scale(2)'
+                        },
+                        {
+                            duration: 5000,
+                            complete: function() {alert('done')}
+                        }
+                )
+            })
+
+</script>
+</body>
