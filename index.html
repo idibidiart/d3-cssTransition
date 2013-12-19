@@ -3,6 +3,36 @@
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="d3-cssTransition.js"></script>
 <body>
+<pre>
+
+    // demo of d3 cssTransition plugin
+
+    var div = d3.select("body")
+            .append("div")
+            .style({position: 'absolute', left: '200px', top: '200px', width: '100px', height: '100px', background: 'red'})
+            .transition()
+            // using "end" allows d3 to cancel the cssTransition when the .transition is
+            // interrupted
+            .each("start" /* or end */, function() {
+                d3.select(this)
+                        .cssTransition(
+                        {
+                            // now you can do any kind of hardware-accelerated transform
+                            // and you don't have to create two transform strings and
+                            // interpolate the numbers within using d3.interpolateString
+                            // in styleTween or attrTween
+                            transform: 'scale(2) rotate(45deg)'
+                        },
+                        {
+                            duration: 2000,
+                            complete: function() {alert('done')}
+                        }
+                )
+            })
+
+        // currently depends on jQuery but it can be made to work w/o it
+
+</pre>
 <script>
     // demo of d3 cssTransition plugin
 
